@@ -3,6 +3,11 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    /* align-items: center; */
+    width: 1440px;
+}
+
 .logo {
     font-weight: bold;
     color: hsl(0, 0%, 100%);
@@ -21,11 +26,11 @@
     width: 30%;
     position: absolute;
     /* margin-left: 3em; */
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 .menu-image {
-    width: 100%;
+    /* width: 100%; */
     /* position: absolute; */
     top: 0;
     left: 0;
@@ -34,7 +39,7 @@
 
 
 .menu {
-    /* width: 100%; */
+    position: relative;
 }
 
 .menu .content{
@@ -63,10 +68,18 @@
 
 .menu .content .icons .icon:hover {
     cursor: pointer;
-    border-bottom: 2px hsl(0, 0%, 100%) solid;
 }
 
-@media only screen and (max-width: 400px) {
+.menu .content .icons .icon:hover::after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 2px hsl(0, 0%, 100%) solid; /* This creates the border. Replace black with whatever color you want. */
+}
+
+@media only screen and (max-width: 375px) {
     .menu .content .icons{
         left: 0;
         width: 100%;
@@ -80,11 +93,13 @@
 }
 
 .header {
+    /* padding-left: 2em; */
+    /* padding-top: 2em; */
     position: relative;
     margin: 8em;
-    /* display: flex; */
-    /* align-items: baseline; */
-    /* justify-content: center; */
+    display: flex;
+    align-items: baseline;
+    text-align: center;
 }
 
 .header img {
@@ -94,14 +109,86 @@
 .header .content{
     position: absolute;
     bottom: 0;
-    padding-left: 2em;
-    padding-top: 2em;
-    width: 30%;
+    /* width: 50%; */
     background-color: hsl(0, 0%, 100%);
     left: 50%;
+    padding-left: 5em;
 }
 
 .header .content h1 {
     text-transform: uppercase;
     font-size: 4em;
+}
+
+.item-list {
+    margin: 0em 8em 16em 8em;
+}
+
+.item-list .item-header {
+    position: relative;
+    display: flex;
+    /* align-items: baseline; */
+    /* justify-content: baseline; */
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 8em;
+}
+
+.item-list .item-header .title {
+    text-transform: uppercase;
+    font-size: 4em;
+}
+
+.item-list .item-header .collapse-button {
+    text-transform: uppercase;
+    padding: 0.5em 1.5em;
+    border: 2px hsl(0, 0%, 41%) solid;
+    color:hsl(0, 0%, 41%);
+    right: 0px;
+    letter-spacing: 2px;
+}
+
+.item-list .item-header .collapse-button:hover {
+    cursor: pointer;
+}
+
+.item-list .item-content {
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* align-content: ; */
+    align-items: flex-end;
+}
+
+.item-list .item-content .item {
+    position: relative;
+}
+
+.item-list .item-content .item img{
+    display: inline;
+    z-index: -1;
+}
+
+.item-list .item-content .item span {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    font-size: 25px;
+    word-wrap: break-word;
+}
+
+.footer {
+    background: hsl(0, 0%, 0%);
+    padding: 4em 8em 4em 8em;
+}
+
+.footer .icons {
+    color: hsl(0, 0%, 100%);
+}
+
+.footer .link {
+    color: hsl(0, 0%, 55%);
 }
